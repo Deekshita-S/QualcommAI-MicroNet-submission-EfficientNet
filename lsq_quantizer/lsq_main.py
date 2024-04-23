@@ -16,7 +16,6 @@ from utils.effnet import efficientnet_b0
 from utils.effnet import EfficientNet
 from utils.utilities import Trainer
 from utils.utilities import get_constraint
-from utils.resnet import ResNet
 
 import pdb
 from helpers import load_checkpoint
@@ -29,12 +28,7 @@ def main():
     if args.dataset == 'cifar10':
         network = resnet20
         dataloader = dataloader_cifar10
-    elif args.dataset == 'cifar100':
-        t_net = ResNet(depth=56, num_classes=100)
-        state = torch.load("/prj/neo_lv/user/ybhalgat/LSQ-KD/cifar100_pretrained/resnet56.pth.tar")
-        t_net.load_state_dict(state)
-        network = resnet20
-        dataloader = dataloader_cifar100
+
     else:
         if args.network == 'resnet18':
             network = resnet18
