@@ -18,7 +18,7 @@ from utils.utilities import Trainer
 from utils.utilities import get_constraint
 from utils.wrn import WRN40_4, WRN40_6
 from utils.mixnet import mixnet_s
-from utils.mixnet_FP import MixNet
+
 
 
 import pdb
@@ -59,10 +59,7 @@ def main():
         elif args.network == 'efficientnet-b0':
             t_net = EfficientNet.from_pretrained("efficientnet-b1")
             network = efficientnet_b0
-        elif args.network == "mixnet_s":
-            t_net = MixNet(net_type=args.teacher)
-            t_net.load_state_dict(torch.load("../imagenet_pretrained/"+args.teacher+".pth"))
-            network = mixnet_s
+        
         else:
             print('Not Support Network Type: %s' % args.network)
             return
