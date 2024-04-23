@@ -16,7 +16,6 @@ from utils.effnet import efficientnet_b0
 from utils.effnet import EfficientNet
 from utils.utilities import Trainer
 from utils.utilities import get_constraint
-from utils.resnet import ResNet
 from utils.wrn import WRN40_4, WRN40_6
 from utils.mixnet import mixnet_s
 from utils.mixnet_FP import MixNet
